@@ -1,20 +1,21 @@
 import React from 'react'
 
-const Pokemon = () => {
+const Pokemon = (props) => {
+  const { pokemon, index } = props
 
   return (
-    <div>
-      <div className="img--wrapper">
-        <img
-          className="recipe__image"
-          alt={ '' }
-          src={ '' }
-          width="80"
-          height="80"
-        />
+    <div className="pokemon pokemon--entry">
+      <img
+        className="pokemon__image"
+        alt={ pokemon.name }
+        src={ require("../images/pokemons/" + index + ".svg") }
+        width="80"
+        height="80"
+      />
+      <div className="pokemon__info">
+        <span className="pokemon__number">#{ index }</span>
+        <p className="pokemon__name">{ pokemon.name }</p>
       </div>
-      <p>#1</p>
-      <p>Pokemon Name</p>
     </div>
   )
 }

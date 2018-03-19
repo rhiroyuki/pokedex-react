@@ -2,11 +2,20 @@ import React from 'react'
 
 import Pokemon from './Pokemon'
 
-const PokemonList = () => {
+const PokemonList = (props) => {
+  const { pokemons } = props
+
+  const renderMessage = (pokemons) => {
+    return pokemons.map((element, index) => (
+      <div className="pokedex__entry" key={ index }>
+        <Pokemon pokemon={ element } index={ index + 1 }></Pokemon>
+      </div>
+    ))
+  } 
+
   return (
-    <div>
-      <h1>Pokedex - React</h1>
-      <Pokemon />
+    <div className="pokedex">
+      { pokemons && renderMessage(pokemons) }
     </div>
   )
 }
