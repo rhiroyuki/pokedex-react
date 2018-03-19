@@ -1,38 +1,40 @@
-import React from 'react'
+import React from 'react';
 
-import PokemonList from '../components/PokemonList'
-import API from '../api'
+import PokemonList from '../components/PokemonList';
+import API from '../api';
 
 class App extends React.Component {
-
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       pokemons: [],
-    }
+    };
 
-    this.fetchPokemons = this.fetchPokemons.bind(this)
+    this.fetchPokemons = this.fetchPokemons.bind(this);
   }
 
   componentDidMount() {
-    this.fetchPokemons()
+    this.fetchPokemons();
   }
 
   fetchPokemons() {
     API.get('/')
       .then((response) => {
-        this.setState({ pokemons: response.data })
-      })
+        this.setState({ pokemons: response.data });
+      });
   }
 
-  render () {
+  render() {
     return (
       <div>
-        { !!this.state.pokemons.length && <PokemonList pokemons={ this.state.pokemons }></PokemonList> }
+        {
+          !!this.state.pokemons.length &&
+          <PokemonList pokemons={ this.state.pokemons }></PokemonList>
+        }
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;

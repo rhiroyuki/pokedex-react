@@ -8,7 +8,7 @@
   visibility: hidden;
   pointer-events: none;
   background-color: $spinner-overlay;
-  background-image: url('images/spinner.svg');
+  background-image: url('../images/spinner.svg');
   background-repeat: no-repeat;
   background-position: center;
   transition: opacity $transition-duration-default ease-in-out,
