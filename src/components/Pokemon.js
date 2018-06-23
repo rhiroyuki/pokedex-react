@@ -17,7 +17,7 @@ class Pokemon extends React.Component {
   }
 
   catchPokemon = () => {
-    // eslint-disable-next-line no-restricted-globals
+    // eslint-disable-next-line
     if (this.state.isCaught && !confirm('Are you sure?')) {
       return;
     }
